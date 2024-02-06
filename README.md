@@ -6,4 +6,5 @@ React Route
 vite
 career-portal
 React icon
+React-toastify
 ```
