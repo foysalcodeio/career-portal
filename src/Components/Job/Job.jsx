@@ -4,9 +4,9 @@ import { FaSackDollar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
 const Job = ({ job }) => {
-  const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary} = job
+  const { id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary} = job;
   return (
-    <div className="card card-compact shadow-xl bg-slate-20 p-3 bg-slate-50">
+    <div className="mt-10 card card-compact shadow-2xl bg-slate-20 p-3 bg-slate-50">
       <figure><img src={logo} alt="Shoes" /></figure>
       <div className="card-body bg-white rounded-lg">
         <h2 className="card-title text-black">{job_title}</h2>
