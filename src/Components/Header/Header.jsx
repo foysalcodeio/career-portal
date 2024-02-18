@@ -12,7 +12,7 @@ const Header = () => {
         <div className="navbar bg-cyan-50 text-black">
         <div className="navbar-start">
           <div className="dropdown">
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow rounded-box w-52">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-3 shadow rounded-box w-72">
              {links}
             </ul>
           </div>
