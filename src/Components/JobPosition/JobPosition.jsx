@@ -1,6 +1,7 @@
 
 import { IoLocationOutline } from "react-icons/io5";
 import { FaSackDollar } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const JobPosition = ({ jobApp }) => {
     // console.log(jobApp)
@@ -27,7 +28,9 @@ const JobPosition = ({ jobApp }) => {
             </div>
 
             <div className="mr-32">
-                <button className="btn text-white w-full mt-5 bg-gradient-to-r from-violet-600 to-indigo-600">Show All Jobs</button>
+                <Link to={'/jobs'}>
+                    <button className="btn text-white w-full mt-5 bg-gradient-to-r from-violet-600 to-indigo-600">Show All Jobs</button>
+                </Link>
             </div>
 
         </div>

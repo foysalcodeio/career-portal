@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Job from "../Job/Job";
 
+
 const FeaturedJobs = () => {
     const [jobs, setJobs] = useState([])
     // this is not the best way to load show
@@ -26,7 +27,7 @@ const FeaturedJobs = () => {
             <div className="grid grid-cols-2 gap-6">
                {
                 jobs.slice(0, dataLength).map( (job) => <Job key={job.id} job={job}></Job>)
-               }
+               }               
             </div>
 
             <div className={dataLength === jobs.length ? 'hidden' : ''}>
