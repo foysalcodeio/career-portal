@@ -11,7 +11,7 @@ const JobPosition = ({ jobApp }) => {
                 <figure><img src={logo} alt="Shoes" /></figure>
             </div>
 
-            <div className="mt-4 ml-20">
+            <div className="mt-4 ml-20 flex-grow">
                 <div className="card-body  bg-white rounded-lg">
                     <h2 className="card-title text-black">{job_title}</h2>
                     <p className="text-gray-900">{company_name}</p>
@@ -26,7 +26,7 @@ const JobPosition = ({ jobApp }) => {
                 </div>
             </div>
 
-            <div className="flex">
+            <div className="mr-32">
                 <button className="btn text-white w-full mt-5 bg-gradient-to-r from-violet-600 to-indigo-600">Show All Jobs</button>
             </div>
 
