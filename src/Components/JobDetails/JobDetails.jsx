@@ -7,17 +7,16 @@ import { MdOutlineSubtitles } from "react-icons/md";
 import { HiOutlinePhone } from "react-icons/hi";
 import { MdOutlineEmail } from "react-icons/md";
 import { MdLocationCity } from "react-icons/md";
-
-
+import { Helmet } from "react-helmet";
 
 
 const JobDetails = () => {
     const jobs = useLoaderData() // all object data
-    const {id} = useParams();
+    const { id } = useParams();
     const idInt = parseInt(id) // convert string to int
 
-    const job = jobs.find( job => job.id === idInt);
-    
+    const job = jobs.find(job => job.id === idInt);
+
     console.log(jobs)
     const handleApplyJob = () => {
         //Add DB
@@ -26,11 +25,14 @@ const JobDetails = () => {
     }
 
     return (
-        <div className="">
+        <div>
+            <Helmet>
+                <title>Career | Details : {id}</title>
+            </Helmet>
             <div className="header h-56 items-center justify-center flex bg-gray-100">
-                    <h1 className="text-4xl font-bold text-gray-600">Job Details</h1>
+                <h1 className="text-4xl font-bold text-gray-600">Job Details</h1>
             </div>
-            
+
             <div className="grid gap-4 md:grid-cols-4 ">
                 <div className="border-none mb-10 md:col-span-3 ">
                     <h2 className="text-4xl">{job.company_name}</h2>
@@ -47,13 +49,13 @@ const JobDetails = () => {
                     <div className="border mb-2"></div>
 
                     <div className="flex gap-1">
-                    <AiOutlineDollar className="text-400 text-2xl text-violet-500" />
-                    <p><b className="text-black">Salary : </b>{job.salary}</p>
+                        <AiOutlineDollar className="text-400 text-2xl text-violet-500" />
+                        <p><b className="text-black">Salary : </b>{job.salary}</p>
                     </div>
 
                     <div className="flex gap-1 ">
-                    <MdOutlineSubtitles className="text-400 text-2xl text-violet-500 mt-2" />
-                    <p className="mt-2"><b className="text-black">Job Title : </b>{job.job_title}</p>
+                        <MdOutlineSubtitles className="text-400 text-2xl text-violet-500 mt-2" />
+                        <p className="mt-2"><b className="text-black">Job Title : </b>{job.job_title}</p>
                     </div>
 
 
@@ -62,25 +64,25 @@ const JobDetails = () => {
 
 
                     <div className="flex gap-1 items-center">
-                    <HiOutlinePhone className="text-400 text-2xl text-violet-500" />
-                    <p className="mt-2"><b className="text-black">Phone : </b>{job.contact_information.phone}</p>
+                        <HiOutlinePhone className="text-400 text-2xl text-violet-500" />
+                        <p className="mt-2"><b className="text-black">Phone : </b>{job.contact_information.phone}</p>
                     </div>
 
                     <div className="flex gap-1 items-center">
-                    <MdOutlineEmail className="text-400 text-2xl text-violet-500" />                    
-                    <p className="mt-2"><b className="text-black">Email : </b>{job.contact_information.email}</p>
+                        <MdOutlineEmail className="text-400 text-2xl text-violet-500" />
+                        <p className="mt-2"><b className="text-black">Email : </b>{job.contact_information.email}</p>
                     </div>
 
                     <div className="flex gap-1">
-                    <MdLocationCity className="text-400 text-4xl text-violet-500" />
-                    <p className="mt-2"><b className="text-black">Address : </b>{job.contact_information.address}</p>
+                        <MdLocationCity className="text-400 text-4xl text-violet-500" />
+                        <p className="mt-2"><b className="text-black">Address : </b>{job.contact_information.address}</p>
                     </div>
-                    
+
                     <button onClick={handleApplyJob} className="btn text-white w-full mt-5 bg-gradient-to-r from-violet-600 to-indigo-600 ">Apply</button>
-                 </div>
+                </div>
 
             </div>
-                 
+
             <ToastContainer />
         </div>
     );

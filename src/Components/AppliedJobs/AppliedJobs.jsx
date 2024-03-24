@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { getStoredJobApp } from "../../Utility/LocalStorage";
 import JobPosition from "../JobPosition/JobPosition";
+import { Helmet } from "react-helmet";
 
 const AppliedJobs = () => {
     const jobs = useLoaderData();
@@ -47,6 +48,9 @@ const AppliedJobs = () => {
 
     return (
         <div className="">
+            <Helmet>
+                <title>Career | Applied Jobs </title>
+            </Helmet>
             <div className="header h-56 items-center justify-center flex bg-gray-100">
                 <h1 className="text-4xl font-bold text-gray-600">Applied Jobs</h1>
             </div>
